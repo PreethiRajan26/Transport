@@ -2,7 +2,12 @@ cloud:
   gateway: 
     routes:
      ##LAND TRANSPORT
-     - id: Land-transport-controller
+     - id: land-transport-controller
+      uri: lb://land-transport-controller
+      predicates:
+        - Path=/landtransport/**
+ server:
+  port: 8081
 eureka:
   client:
     service-url:
